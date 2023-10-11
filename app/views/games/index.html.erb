@@ -9,12 +9,18 @@
     <dd><%= @messages[:attempts] %></dd>
 </dl>
 
-<form method="POST" action="#">
-    <label>
-        Enter your guess (a number between 1 and 100):
-        <input type="number" name="guess">
-    </label>
-    <input type="submit" value="Submit Guess">
-</form>
+<% if @messages[:attempts] > 0 %>
+    <form method="POST" action="#">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <label>
+            Enter your guess (a number between 1 and 100):
+            <input type="number" name="guess" required>
+        </label>
+        <input type="submit" value="Submit Guess">
+    </form>
+<% end %>
 
-<form method="POST" action="#"><input type="submit" name="new" value="New Game"></form>
+<form method="POST" action="#">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="submit" name="new_game" value="New Game">
+</form>

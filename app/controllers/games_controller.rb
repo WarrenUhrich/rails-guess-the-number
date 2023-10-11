@@ -47,6 +47,7 @@ class GamesController < ApplicationController
                     @messages[:alert] = "Oh no! You guessed #{hint} (#{guess})! Your have lost an attempt."
                 end
             end
+        end
 
         # End game scenario
         if session[:attempts] <= 0
