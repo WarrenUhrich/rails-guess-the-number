@@ -1,0 +1,20 @@
+<h1><%= @messages[:heading] %></h1>
+
+<p><%= @messages[:alert] %></p>
+
+<dl>
+    <dt>Score</dt>
+    <dd><%= @messages[:score] %></dd>
+    <dt>Remaining Attempts</dt>
+    <dd><%= @messages[:attempts] %></dd>
+</dl>
+
+<form method="POST" action="#">
+    <label>
+        Enter your guess (a number between 1 and 100):
+        <input type="number" name="guess">
+    </label>
+    <input type="submit" value="Submit Guess">
+</form>
+
+<form method="POST" action="#"><input type="submit" name="new" value="New Game"></form>
